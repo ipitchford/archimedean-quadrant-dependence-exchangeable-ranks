@@ -1,0 +1,17 @@
+Release replay environment (26 November 2026, macOS arm64 host)
+Interpreter (printed inside the run, not assumed):
+- `uv run --no-project --python 3.12 [--with numpy==2.3.5 --with scipy==1.16.3]` resolved to CPython 3.12.11 on
+  macOS-27.2.1-arm64-arm-64bit, NumPy 2.3.5, SciPy 1.16.3. (The lead's earlier clean replay used CPython 3.11.14
+  with NumPy 2.4.6 and SciPy 1.17.1 and produced identical output.)
+Packages: verify.py needs only the standard library; check_grid.py needs requirements.txt (numpy, scipy). No compiler.
+Working directory: the package root. Flags: python3 -I -B -O for both scripts. PYTHONDONTWRITEBYTECODE=1.
+Run time on the release host: verify.py under 1 s; check_grid.py about 10 s.
+GitHub CI: ubuntu-latest, actions/setup-python 3.12, pip install -r requirements.txt. One job: manifest, both scripts,
+one negative control (a wrong constant in verify.py must fail), comparison with the recorded outputs, working tree
+unchanged.
+Comparison policy (declared before tagging; the same in CI, README.md and REPLAY_RECEIPT.md;
+.github/ci/compare_outputs.py):
+- results/verify.txt identical byte for byte (exact rational arithmetic);
+- results/check_grid.txt: text and integers identical; floating values (LP optima, predictions, largest gap) within
+  absolute 1e-9, the tolerance declared in check_grid.py. No float value enters a theorem.
+On the release host both outputs were byte-identical to the recorded ones.

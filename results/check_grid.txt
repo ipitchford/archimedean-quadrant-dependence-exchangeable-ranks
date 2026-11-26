@@ -1,0 +1,19 @@
+n=3 magnitudes=6 s=-1.50 LP=-2.7708333333 prediction=-2.7708333333
+n=3 magnitudes=6 s=-1.00 LP=-2.2916666667 prediction=-2.2916666667
+n=3 magnitudes=6 s=+0.00 LP=-1.3333333333 prediction=-1.3333333333
+n=3 magnitudes=6 s=+0.80 LP=-0.5666666667 prediction=-0.5666666667
+n=3 magnitudes=6 s=+0.95 LP=-0.4590277778 prediction=-0.4590277778
+n=3 magnitudes=6 s=+1.00 LP=-0.4305555556 prediction=-0.4305555556
+n=4 magnitudes=4 s=-2.00 LP=-2.3125000000 prediction=-2.3125000000
+n=4 magnitudes=4 s=-1.00 LP=-1.6562500000 prediction=-1.6562500000
+n=4 magnitudes=4 s=+0.00 LP=-1.0000000000 prediction=-1.0000000000
+n=4 magnitudes=4 s=+0.80 LP=-0.4750000000 prediction=-0.4750000000
+n=4 magnitudes=4 s=+0.95 LP=-0.3765625000 prediction=-0.3765625000
+n=4 magnitudes=4 s=+1.00 LP=-0.3437500000 prediction=-0.3437500000
+n=5 magnitudes=5 s=-2.50 LP=-1.9500000000 prediction=-1.9500000000
+n=5 magnitudes=5 s=-1.00 LP=-1.2120000000 prediction=-1.2120000000
+n=5 magnitudes=5 s=+0.00 LP=-0.7200000000 prediction=-0.7200000000
+n=5 magnitudes=5 s=+0.80 LP=-0.3264000000 prediction=-0.3264000000
+n=5 magnitudes=5 s=+0.95 LP=-0.2526000000 prediction=-0.2526000000
+n=5 magnitudes=5 s=+1.00 LP=-0.2280000000 prediction=-0.2280000000
+All 18 discrete optima match the predictions (largest gap 1.4e-14, tolerance 1e-09).

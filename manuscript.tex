@@ -1,0 +1,389 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage{xcolor}
+\usepackage[margin=25mm]{geometry}
+\usepackage[colorlinks=true,urlcolor=teal,linkcolor=teal,citecolor=teal]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\Qq}{\mathcal Q}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sign}
+\title{Quadrant dependence, reflected copula measures\\ and exchangeable ranks}
+\author{Anonymous\\[3pt]{\small DOI \href{https://doi.org/10.5281/zenodo.24547093}{10.5281/zenodo.24547093}}}
+\date{November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fuchs and Tschimpke introduced the positive measure inducing (PMI) property of a bivariate copula, which compares the probability masses of four mirror-image rectangles, and showed that it orders a family of concordance measures; one consequence is the population inequality $3\gamma\geq2\rho$ between Gini's gamma and Spearman's rho. They conjectured that, for Archimedean copulas, PMI is equivalent to positive quadrant dependence (PQD), and that the negative versions (NMI and NQD) are likewise equivalent. Graham's 2026 preprint refuted the implication PQD $\Rightarrow$ PMI and left the other three open. We show that all four implications fail arbitrarily close to independence, with real-analytic Archimedean generators, positive densities and explicit parameters, and that the examples extend to exchangeable Archimedean copulas in any prescribed finite dimension. In two of the examples quadrant dependence coexists with the opposite sign of $3\gamma-2\rho$. We then prove that ordered comparisons of invariant concordance measures detect exactly the symmetrised reflected measure, while no finite collection of such comparisons characterises PMI. For shared-frailty models, two frailty values always give PMI and three values can fail it, even with a density that is totally positive of every order. Finally we determine the exact range of $3\gamma-2s\rho$ for a pair of ranks that extends to $n$ exchangeable ranks, for every slope $-n/2\leq s\leq1$. The lower endpoint is $-(3-2s)/(n-1)$ for even $n$ and has an explicit parity correction for odd $n$; for example $3\gamma-2\rho\geq-23/54$ and $\gamma\geq-4/9$ when $n=3$. The same construction gives the exact equicorrelation slice of every generalised Gini compatibility set of Koike and Hofert, together with integer quadratic inequalities for general matrices. The full compatibility sets remain open.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+This section states the problem, explains why it matters, summarises what was known and what is new, and gives a roadmap.
+
+\paragraph{The problem.} A copula is the joint distribution of two random variables after each has been transformed to a uniform rank on $[0,1]$. It describes dependence free of the marginal scales. Two kinds of ``positive dependence'' are compared in this paper. \emph{Positive quadrant dependence} (PQD) asks that the probability of jointly small ranks, $\PP(U\leq u,V\leq v)$, is at least the product $uv$ that independence would give, for every threshold pair $(u,v)$. It is a statement about cumulative probabilities. The \emph{positive measure inducing} (PMI) property of Fuchs and Tschimpke~\cite{FT} is local instead. For a small rectangle in the lower-left quarter of the unit square it compares the probability masses of the rectangle and of its three mirror images in the lines $u=1/2$ and $v=1/2$. PMI asks that the two rectangles on the main diagonal side together carry at least as much mass as the two on the opposite side. The negative versions, NQD and NMI, reverse the inequalities.
+
+\paragraph{Why it matters.} Fuchs and Tschimpke~\cite[Theorem~1]{FT} proved that PMI orders a whole family of concordance measures. A concordance measure is a single number in $[-1,1]$ summarising how strongly large values go with large values. The family includes Spearman's rho $\rho$ and Gini's gamma $\gamma$, and the ordering yields, for example, $3\gamma\geq2\rho$ for every PMI copula~\cite[Corollary~1]{FT}. They built asymptotic tests on these inequalities: if a sample violates $3\gamma\geq2\rho$, every PMI model can be excluded. To make such exclusions useful they conjectured~\cite[Conjecture~1]{FT} that within the Archimedean class, the most widely used one-parameter-family class in finance, insurance and hydrology, PMI coincides with the familiar PQD, and NMI coincides with NQD. If true, a rejection would exclude every positively quadrant dependent Archimedean model.
+
+\paragraph{What was known.} Fuchs and Tschimpke verified the equivalence for the Frank family and showed that PMI and PQD differ outside the Archimedean class~\cite{FT}. Graham~\cite{graham} constructed a strict Archimedean copula that is PQD but not PMI. Its inverse generator is the maximum of two exponentials. Graham states explicitly that the converse implication and the negative equivalence remain open. Separately, Ansari, Rockel and Steinma{\ss}l~\cite{ars} recently determined the exact set of attainable pairs $(\rho,\gamma)$ over all bivariate copulas, using a decomposition of centred ranks into signs and magnitudes. Koike and Hofert~\cite{kh} introduced generalised Gini's gamma, represented it as a mixture of correlations of three-valued variables, and showed that the set of matrices of pairwise generalised Gini coefficients lies between the cut polytope and the set of correlation matrices. They left the exact set open.
+
+\paragraph{What is new.} The paper makes five contributions.
+\begin{enumerate}
+\item \emph{All four implications fail} (Theorem~\ref{thm:local}). Two explicit polynomial perturbations of independence give real-analytic Archimedean copulas with positive densities, arbitrarily close to independence in every $C^m$ norm, for which PMI holds without PQD, NMI without NQD, NQD without NMI, and PQD without PMI. Explicit parameters are $0<|\epsilon|\leq10^{-3}$ and $0<|\epsilon|\leq10^{-8}$. The examples are bivariate margins of exchangeable Archimedean copulas in any prescribed finite dimension. In the PQD example $3\gamma<2\rho$, so a rejection of $3\gamma\geq2\rho$ cannot exclude all PQD Archimedean models.
+\item \emph{What concordance comparisons can see} (Theorem~\ref{thm:dual} and Corollary~\ref{cor:finite}). The full family of Fuchs--Tschimpke comparisons holds exactly when the symmetrised reflected measure is nonnegative. For exchangeable copulas, including all Archimedean ones, the comparisons therefore characterise PMI, but no finite subfamily does.
+\item \emph{The frailty threshold} (Proposition~\ref{prop:frailty} and Corollary~\ref{cor:tp}). A shared-frailty Archimedean copula whose frailty takes at most two values is always PMI. Three values can fail PMI, even when the density is multivariate totally positive of order two in every dimension, or totally positive of every order.
+\item \emph{Sharp bounds under finite exchangeability} (Theorem~\ref{thm:finite}). If the pair of ranks is the first two coordinates of an exchangeable vector of $n$ ranks, then $3\gamma-2s\rho$ ranges exactly over $[d_n(s),3-2s]$ for each slope $-n/2\leq s\leq1$, with an explicit $d_n(s)$ that depends on the parity of $n$. Thus $3\gamma-2\rho\geq-23/54$ and $\gamma\geq-4/9$ for three exchangeable ranks, while the unrestricted values are $-1$.
+\item \emph{Generalised Gini matrices} (Theorem~\ref{thm:gini}). For every generalised Gini's gamma the smallest common pairwise value in dimension $n$ is determined. For ordinary Gini's gamma and $n=3$ it is $-4/9$, whereas Koike and Hofert's Gaussian example reaches about $-0.379$ and the correlation-matrix bound is $-1/2$. Integer quadratic inequalities hold for all attainable matrices.
+\end{enumerate}
+Two of the tools are credited prior results: the sign--magnitude representation of $\rho$ and $\gamma$~\cite[Lemma~3.1]{ars} and the correlation-mixture representation of generalised Gini's gamma~\cite[Theorem~3]{kh}.
+
+\paragraph{Scope.} All statements are about populations. The counterexamples of contribution~1 are deliberately close to independence; at the explicit parameters their values of $3\gamma-2\rho$ are of order $10^{-10}$ for the $f_B$ examples and $10^{-5}$ for the $f_A$ examples, and say nothing about the power of a test in realistic samples (Section~\ref{sec:discussion}).
+
+\paragraph{Roadmap.} Section~\ref{sec:prelim} fixes notation and collects three identities. Section~\ref{sec:local} proves the four separations. Section~\ref{sec:dual} characterises what the concordance comparisons detect. Section~\ref{sec:frailty} treats shared-frailty models. Section~\ref{sec:finite} proves the exchangeability bounds and Section~\ref{sec:gini} the generalised Gini results. Section~\ref{sec:discussion} discusses statistical use and open problems. The appendix describes the accompanying verification scripts.
+
+\section{Notation and three identities}\label{sec:prelim}
+This section defines the dependence notions, the concordance measures and the reflection operations used throughout, and records three identities on which later proofs rely.
+
+\paragraph{Copulas and quadrant dependence.} A (bivariate) copula $C$ is the distribution function on $[0,1]^2$ of a pair $(U,V)$ of uniform random variables; $\mu_C$ denotes its probability measure and $c$ its density when one exists. Write $\Pi(u,v)=uv$ (independence), $M(u,v)=\min(u,v)$ (equal ranks) and $W(u,v)=\max(u+v-1,0)$ (opposite ranks). $C$ is PQD if $C\geq\Pi$ and NQD if $C\leq\Pi$ on $[0,1]^2$. $C$ is \emph{exchangeable} if $(U,V)$ and $(V,U)$ have the same law. Closeness of copulas is measured in the $C^m$ norm on the closed square, the maximum of the absolute values of all partial derivatives of order at most $m$.
+
+\paragraph{The reflected measure.} Let $\Qq=(0,1/2)^2$ and let $r_1(u,v)=(1-u,v)$, $r_2(u,v)=(u,1-v)$. The \emph{reflected measure} of $C$ is the signed measure on $\Qq$
+\[
+ \eta_C=\big(\mu_C-(r_1)_\#\mu_C-(r_2)_\#\mu_C+(r_1r_2)_\#\mu_C\big)\big|_{\Qq},
+\]
+where $r_\#\mu$ is the image of $\mu$ under $r$. Thus $\eta_C$ gives a rectangle $R\subset\Qq$ the mass of $R$ and of its point reflection $r_1r_2R$, minus the masses of its two single reflections. Fuchs and Tschimpke define PMI by requiring that the function $E_C(u,v)=C(u,v)+C(1-u,v)+C(u,1-v)+C(1-u,1-v)-1$ induce a (nonnegative) measure on $\Qq$~\cite[Definition~1 and (2.2)]{FT}; its rectangle increments are exactly the $\eta_C$-masses. Hence $C$ is PMI iff $\eta_C\geq0$ and NMI iff $\eta_C\leq0$. If $C$ has a continuous density $c$, then $\eta_C$ has density
+\[
+ F_c(u,v)=c(u,v)+c(1-u,1-v)-c(1-u,v)-c(u,1-v),\qquad(u,v)\in\Qq,
+\]
+which we call the \emph{folded density}; PMI then means $F_c\geq0$ on $\Qq$~\cite[Remark~1]{FT}. Since $F_c$ is continuous, a single point with $F_c<0$ gives a small rectangle of negative $\eta_C$-mass.
+
+\paragraph{Archimedean copulas.} An Archimedean copula has the form $C(u,v)=\psi(\psi^{-1}(u)+\psi^{-1}(v))$, where the \emph{inverse generator} $\psi:[0,\infty)\to[0,1]$ is continuous, convex and decreasing with $\psi(0)=1$ (with the usual pseudo-inverse when $\psi$ reaches zero). It is \emph{strict} when $\psi>0$ everywhere. In $d$ dimensions the same formula $\psi(\sum_i\psi^{-1}(u_i))$ defines an exchangeable copula when $\psi$ satisfies stronger monotonicity conditions~\cite{mcneil}. Every Archimedean copula is exchangeable. Conjecture~1 of~\cite{FT} asserts that, for Archimedean $C$, PQD$\iff$PMI and NQD$\iff$NMI.
+
+\paragraph{Concordance measures.} Spearman's rho and Gini's gamma are
+\begin{equation}
+ \rho(C)=12\iint_{[0,1]^2}C\dd u\dd v-3,\qquad
+ \gamma(C)=4\int_0^1\big[C(x,x)+C(x,1-x)\big]\dd x-2.\label{eq:rhogamma}
+\end{equation}
+For a slope $s\in\mathbb R$ we study the linear combination
+\[
+ D_s(C)=3\gamma(C)-2s\rho(C),\qquad D=D_1=3\gamma-2\rho .
+\]
+Fuchs and Tschimpke prove $D\geq0$ for PMI copulas and $D\leq0$ for NMI copulas~\cite[Corollary~1 and Remark~3]{FT}. Both $\rho$ and $\gamma$ equal $1$ at $M$, $0$ at $\Pi$ and $-1$ at $W$, so $D_s(M)=3-2s$ and $D_s(W)=-(3-2s)$.
+
+\paragraph{Identity 1: the rank-one formula.} For a bounded measurable $h$ on $[0,1]$ write $(h\otimes h)(u,v)=h(u)h(v)$. Substituting into~\eqref{eq:rhogamma}, the constants cancel on $C-\Pi$, and $D$ extends to the linear functional $L(\Theta)=12\int_0^1[\Theta(x,x)+\Theta(x,1-x)]\dd x-24\iint\Theta$ on bounded kernels $\Theta$, with $|L(\Theta)|\leq48\sup|\Theta|$ and $D(C)=L(C-\Pi)$. With $T$ uniform on $[0,1]$ and $m(x)=(h(x)+h(1-x))/2$ one has $12\int[h^2+h(x)h(1-x)]=24\int m^2$ and $\int m=\int h$, so
+\begin{equation}
+ L(h\otimes h)=24\Var_T\Big(\frac{h(T)+h(1-T)}{2}\Big).\label{eq:rankone}
+\end{equation}
+For $h_k(x)=x-x^k$ the variance in~\eqref{eq:rankone} is, by beta integrals,
+\begin{equation}
+ V_k=\frac{1}{2(2k+1)}\Big(1+\binom{2k}{k}^{-1}\Big)-\frac1{(k+1)^2};\qquad V_2=\frac1{180}.\label{eq:Vk}
+\end{equation}
+
+\paragraph{Identity 2: conditionally independent pairs.} Suppose $C(u,v)=\EE[G_Z(u)G_Z(v)]$, where, given a latent variable $Z$, the two ranks are independent with common conditional distribution function $G_Z$. Since $\EE G_Z(u)=u$, $C-\Pi=\EE[(G_Z-\mathrm{id})\otimes(G_Z-\mathrm{id})]$, and~\eqref{eq:rankone} with Fubini's theorem gives the following lemma. Its two ingredients for $\gamma$ and $\rho$ separately appear in Fuchs~\cite[Theorem~6 and Corollary~5]{fuchs}.
+
+\begin{lemma}\label{lem:variance}
+If $C(u,v)=\EE[G_Z(u)G_Z(v)]$ as above, then
+\[
+ 3\gamma(C)-2\rho(C)=24\,\EE_Z\Var_T\Big(\frac{G_Z(T)+G_Z(1-T)}{2}\Big)\geq0 .
+\]
+For a strict Archimedean frailty model, in which $\psi(t)=\EE e^{-Zt}$ for a positive random rate $Z$, equality holds only at independence.
+\end{lemma}
+\begin{proof}
+Only the equality case needs comment. Here $G_z(u)=\exp[-z\psi^{-1}(u)]$, with continuous endpoint values $0$ and $1$. If the variance vanishes, then for almost every $z$ the symmetrisation $(G_z(x)+G_z(1-x))/2$ is constant, and the endpoints fix the constant at $1/2$. At $x=1/2$ this gives $z\psi^{-1}(1/2)=\log2$, so $Z$ is almost surely constant and $C=\Pi$.
+\end{proof}
+
+\paragraph{Identity 3: signs and magnitudes.} For a uniform rank $U$ let $R=|2U-1|$ (its \emph{magnitude}) and $S=\sgn(2U-1)$ (its \emph{sign}), so $U=(1+SR)/2$. Then $R$ is uniform on $[0,1]$ and $S$ is a fair sign independent of $R$. For a pair $(U_1,U_2)\sim C$, Ansari, Rockel and Steinma{\ss}l~\cite[Lemma~3.1]{ars} show
+\begin{equation}
+ \rho(C)=3\EE[S_1S_2R_1R_2],\qquad\gamma(C)=2\EE[S_1S_2\min(R_1,R_2)].\label{eq:signmag}
+\end{equation}
+The second formula uses $\gamma=2\EE[|U_1+U_2-1|-|U_1-U_2|]$ and $|a+b|-|a-b|=2\sgn(ab)\min(|a|,|b|)$.
+
+\section{All four implications fail near independence}\label{sec:local}
+This section constructs explicit real-analytic Archimedean copulas, arbitrarily close to independence, that separate quadrant dependence from the sign of the reflected measure in each of the four directions.
+
+\paragraph{The construction.} Let $f(x)=\sum_{k\geq1}b_kx^k$ be a polynomial with $f(1)=0$. For a small real parameter $\epsilon$ put $F(x)=x+\epsilon f(x)$, which is then an increasing analytic bijection of $[0,1]$ with inverse $X=F^{-1}$, and
+\begin{equation}
+ C_\epsilon(u_1,\ldots,u_d)=F\Big(\prod_{i=1}^dX(u_i)\Big).\label{eq:construction}
+\end{equation}
+This is the Archimedean form with inverse generator $\psi(t)=F(e^{-t})$. Setting all but one argument to $1$ returns $F(X(u))=u$, and $C_\epsilon$ vanishes when an argument vanishes. With $x_i=X(u_i)$ and $z=\prod_ix_i$, differentiation gives the density
+\begin{equation}
+ c_{d,\epsilon}(u_1,\ldots,u_d)=\frac{1+\epsilon\sum_kb_kk^dz^{k-1}}{\prod_{i=1}^dF'(x_i)}.\label{eq:density}
+\end{equation}
+If $|\epsilon|\sum_k|b_k|k^d<1$, the numerator and every $F'(x_i)\geq1-|\epsilon|\sum_k|b_k|k$ are positive, so~\eqref{eq:construction} is a $d$-dimensional exchangeable Archimedean copula with positive real-analytic density, and its bivariate margins are $C_\epsilon(u,v)=F(X(u)X(v))$. For $d=2$, positivity of the numerator is also the convexity condition $\psi''(t)=x(F'(x)+xF''(x))>0$ at $x=e^{-t}$. As $\epsilon\to0$, $F\to\mathrm{id}$ and $X\to\mathrm{id}$ in every $C^m[0,1]$ norm, so $C_\epsilon\to\Pi$ in every $C^m$ norm.
+
+To first order, $X=\mathrm{id}-\epsilon f+O(\epsilon^2)$, and since $\sum_kb_k=0$,
+\begin{equation}
+ \frac{\partial C_\epsilon}{\partial\epsilon}\Big|_{\epsilon=0}=\mathcal A(u,v):=f(uv)-vf(u)-uf(v)=\sum_{k\geq2}b_k\,h_k(u)h_k(v),\qquad h_k(x)=x-x^k.\label{eq:tangent}
+\end{equation}
+We use two polynomials:
+\[
+ f_A(x)=x-2x^2+x^3=x(1-x)^2,\qquad f_B(x)=x+x^2-2x^{100}.
+\]
+
+\begin{theorem}\label{thm:local}
+Let $C_\epsilon$ be the bivariate copula~\eqref{eq:construction} with $d=2$. Each line of the table holds for every $\epsilon$ in the stated range.
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Polynomial & Range of $\epsilon$ & Property that holds & Property that fails\\
+\midrule
+$f_A$ & $0<\epsilon\leq10^{-3}$ & PMI & PQD\\
+$f_A$ & $-10^{-3}\leq\epsilon<0$ & NMI & NQD\\
+$f_B$ & $0<\epsilon\leq10^{-8}$ & NQD, and $3\gamma>2\rho$ & NMI\\
+$f_B$ & $-10^{-8}\leq\epsilon<0$ & PQD, and $3\gamma<2\rho$ & PMI\\
+\bottomrule
+\end{tabular}
+\end{center}
+All these copulas are strict Archimedean with positive real-analytic densities on the closed square, and they converge to $\Pi$ in every $C^m$ norm as $\epsilon\to0$. For each dimension $d\geq2$, every row holds for all sufficiently small $|\epsilon|$ of the stated sign with $C_\epsilon$ the bivariate margin of a $d$-dimensional exchangeable Archimedean copula; it suffices that $|\epsilon|<(1+2^{d+1}+3^d)^{-1}$ for $f_A$ and $|\epsilon|<(1+2^d+2\cdot100^d)^{-1}$ for $f_B$, in addition to the ranges in the table.
+\end{theorem}
+
+The proof treats the two polynomials separately. For $f_A$ the folded density is signed exactly; for $f_B$ the quadrant sign is exact and the sign of $D=3\gamma-2\rho$ is controlled by~\eqref{eq:rankone}.
+
+\begin{proof}[Proof for $f_A$]
+\emph{Quadrant order fails.} Formula~\eqref{eq:density} gives $c(0,0)=(1+\epsilon)/(1+\epsilon)^2=1/(1+\epsilon)$. Since $C_\epsilon(u,v)/(uv)$ is the average of $c$ over $[0,u]\times[0,v]$, it tends to $1/(1+\epsilon)$ as $u,v\downarrow0$. So $C_\epsilon<\Pi$ near the origin when $\epsilon>0$ (not PQD) and $C_\epsilon>\Pi$ there when $\epsilon<0$ (not NQD).
+
+\emph{The folded density has the sign of $\epsilon$.} Write the density as a sum of separated terms, $c(u,v)=\sum_{k=1}^3w_k\phi_k(x)\phi_k(y)$ with $x=X(u)$, $y=X(v)$, $\phi_k(x)=x^{k-1}/F'(x)$ and weights $(w_1,w_2,w_3)=(1+\epsilon,-8\epsilon,9\epsilon)$. For one coordinate put $x_-=X(u)$, $x_+=X(1-u)$, $\sigma=x_-+x_+$, $\varpi=x_-x_+$ and $\mathcal P=F'(x_-)F'(x_+)>0$. A direct computation of divided differences gives
+\[
+ \mathcal P\,\frac{\phi_k(x_+)-\phi_k(x_-)}{x_+-x_-}=\Delta_k,\qquad \Delta_1=\epsilon(4-3\sigma),\quad \Delta_2=1+\epsilon-3\epsilon\varpi,\quad \Delta_3=(1+\epsilon)\sigma-4\epsilon\varpi .
+\]
+Hence $F_c(u,v)=\frac{(x_{+,u}-x_{-,u})(x_{+,v}-x_{-,v})}{\mathcal P_u\mathcal P_v}\sum_kw_k\Delta_{k,u}\Delta_{k,v}$, with subscripts indicating the coordinate, and the prefactor is positive on $\Qq$. The sum equals $\epsilon$ times
+\[
+ (1+\epsilon)\epsilon(4-3\sigma_u)(4-3\sigma_v)-8\Delta_{2,u}\Delta_{2,v}+9\Delta_{3,u}\Delta_{3,v}.
+\]
+Since $0\leq f_A\leq1$ on $[0,1]$ and $F(x_-)+F(x_+)=1$, we have $|\sigma-1|\leq2|\epsilon|$ and $\varpi\leq(\sigma/2)^2$. For $|\epsilon|\leq10^{-3}$ this gives $0<\Delta_2\leq1.002$, $\Delta_3\geq0.992$ and $|4-3\sigma|\leq4$, so the displayed quantity exceeds $9(0.992)^2-8(1.002)^2-16(0.001001)>4/5$. Thus $F_c$ has the strict sign of $\epsilon$ throughout $\Qq$: PMI for $\epsilon>0$ and NMI for $\epsilon<0$. The density is positive since $|\epsilon|(1+2\cdot4+9)<1$.
+\end{proof}
+
+\begin{proof}[Proof for $f_B$]
+\emph{Exact quadrant sign.} With $u=F(x)$, $v=F(y)$ one has $C_\epsilon(u,v)-uv=F(xy)-F(x)F(y)=\epsilon\mathcal A(x,y)-\epsilon^2f(x)f(y)$. Put $g(x)=f_B(x)/x=2(1-x^{99})-(1-x)$; then $\mathcal A(x,y)/(xy)=(1-x)(1-y)-2(1-x^{99})(1-y^{99})$ and
+\[
+ \frac{C_\epsilon(u,v)-uv}{\epsilon xy}=(1-x)(1-y)-2(1-x^{99})(1-y^{99})-\epsilon g(x)g(y).
+\]
+Since $1-x^{99}\geq1-x$, the first two terms sum to at most $-(1-x)(1-y)$. Also $g(x)/(1-x)=2(1+x+\cdots+x^{98})-1\in[1,197]$. So for $0<|\epsilon|<197^{-2}$ the right side is negative on the open square, and $C_\epsilon-\Pi$ has the strict sign of $-\epsilon$ there: NQD for $\epsilon>0$ and PQD for $\epsilon<0$.
+
+\emph{Sign of $D$.} By~\eqref{eq:tangent} and~\eqref{eq:rankone}, $L(\mathcal A)=24(V_2-2V_{100})$. By~\eqref{eq:Vk}, $V_2=1/180$ and $2V_{100}<1/200$ because $\binom{200}{100}>200$, so $L(\mathcal A)>1/75$ (numerically $0.018636$). For the remainder, $|f_B|\leq2$ and $f_B'\in[-199,3]$ on $[0,1]$, so $|X(u)-u|=|\epsilon f_B(x)|\leq2|\epsilon|$ and the first partial derivatives of $\mathcal A$ are bounded by $400$. Therefore $\sup|C_\epsilon-\Pi-\epsilon\mathcal A|\leq(4\cdot400+4)\epsilon^2=1604\epsilon^2$, and
+\[
+ |D(C_\epsilon)-\epsilon L(\mathcal A)|\leq48\cdot1604\,\epsilon^2<|\epsilon|/75\qquad(0<|\epsilon|\leq10^{-8}).
+\]
+Hence $D(C_\epsilon)$ has the sign of $\epsilon$. Because PMI implies $D\geq0$ and NMI implies $D\leq0$~\cite{FT}, the PQD copula ($\epsilon<0$, $D<0$) is not PMI and the NQD copula ($\epsilon>0$, $D>0$) is not NMI. The density is positive since $10^{-8}(1+4+2\cdot10^4)<1$.
+\end{proof}
+
+\begin{proof}[Proof of the remaining assertions]
+Strictness holds because $\psi(t)=F(e^{-t})>0$. Real analyticity and $C^m$ convergence were noted after~\eqref{eq:density}. For the $d$-dimensional statement, the stated bounds make the numerator of~\eqref{eq:density} and all $F'(x_i)$ positive, so~\eqref{eq:construction} is an exchangeable $d$-dimensional Archimedean copula whose bivariate margin is the bivariate $C_\epsilon$, and the table applies to that margin.
+\end{proof}
+
+\begin{remark}\label{rem:shrink}
+The admissible range for $f_B$ must shrink to zero as $d$ grows; the rate given in Theorem~\ref{thm:local} is only sufficient. A PQD copula with $D<0$ cannot be a margin of an infinite exchangeable sequence, since Theorem~\ref{thm:finite} below gives $D\geq0$ under infinite extendibility. In particular no completely monotone generator, that is no shared-frailty model, can reproduce the last row of the table. Proposition~\ref{prop:frailty} shows that frailty models can nevertheless fail PMI.
+\end{remark}
+
+\paragraph{A non-strict example.} Conjecture~1 of~\cite{FT} also covers non-strict generators. A familiar member of the Clayton family already gives NQD without NMI. With parameter $-1/2$ the Clayton copula is $C(u,v)=(\sqrt u+\sqrt v-1)_+^2$. The inequality $(1-\sqrt u)(1-\sqrt v)\geq0$ gives $\sqrt u+\sqrt v-1\leq\sqrt{uv}$, hence $C\leq\Pi$. For $u,v\in(1/4,1/2)$ all four reflected points $(x,y)$ satisfy $\sqrt x+\sqrt y>1$, where $c(x,y)=1/(2\sqrt{xy})$, so
+\[
+ F_c(u,v)=\tfrac12\big[u^{-1/2}-(1-u)^{-1/2}\big]\big[v^{-1/2}-(1-v)^{-1/2}\big]>0 .
+\]
+Thus $\eta_C$ is positive on the open square $(1/4,1/2)^2$ of fixed size, and $C$ is not NMI.
+
+\section{What ordered concordance comparisons detect}\label{sec:dual}
+This section asks the converse question behind the Fuchs--Tschimpke tests: if a copula satisfies all the concordance comparisons that PMI implies, must it be PMI? The answer is yes for exchangeable copulas, but only if infinitely many comparisons are used.
+
+Following~\cite{FT}, a copula $A$ is \emph{invariant} if its law is unchanged by both coordinate reflections and by interchange of coordinates. For copulas $C,A$ let $[C,A]=\int C\dd\mu_A$. Each invariant $A$ satisfies $[\Pi,A]=1/4<[M,A]$ and defines a concordance measure $\kappa_A(C)=([C,A]-1/4)/([M,A]-1/4)$; ordinary Spearman's rho and Gini's gamma are $\kappa_\Pi$ and $\kappa_{(M+W)/2}$~\cite[Example~8]{FT}. For invariant $A,B$ write $A\preceq B$ if $A\leq B$ on $[0,1/2]^2$. Theorem~1 of~\cite{FT} states that PMI implies the comparisons $\kappa_B(C)/\alpha(B)\geq\kappa_A(C)/\alpha(A)$ with $\alpha(\cdot)=([M,\cdot]-1/4)^{-1}$; these are equivalent to $[C,B]\geq[C,A]$. Let $\tau(u,v)=(v,u)$ and $\eta_C^{\rm sym}=(\eta_C+\tau_\#\eta_C)/2$.
+
+\begin{theorem}\label{thm:dual}
+For any copula $C$, the inequalities $[C,B]\geq[C,A]$ hold for all invariant $A\preceq B$ if and only if $\eta_C^{\rm sym}\geq0$. It suffices to take $A=\Pi$ and invariant $B$ with smooth positive density arbitrarily close to $1$. Reversing all inequalities characterises $\eta_C^{\rm sym}\leq0$. For exchangeable $C$, in particular for every Archimedean copula, $\eta_C^{\rm sym}=\eta_C$, so the comparisons characterise PMI and NMI.
+\end{theorem}
+\begin{proof}
+\emph{A representation.} Integrating the survival function $1-u-v+A(u,v)$ of $\mu_A$ against $\mu_C$ shows $[C,A]=[A,C]=\int A\dd\mu_C$. Reflection invariance of $A$ gives $A(1-u,v)=v-A(u,v)$, and similarly for $B$, so $G=B-A$ changes sign under each reflection, vanishes on the midlines and is symmetric under $\tau$. Splitting the square into four quarters, and using that copulas give no mass to the midlines,
+\[
+ [C,B]-[C,A]=\int G\dd\mu_C=\int_{\Qq}G\dd\eta_C=\int_{\Qq}G\dd\eta_C^{\rm sym}.
+\]
+Since $A\preceq B$ means $G\geq0$ on $\Qq$, nonnegativity of $\eta_C^{\rm sym}$ implies all the comparisons.
+
+\emph{Necessity.} Suppose $\eta_C^{\rm sym}$ is not nonnegative. By the Hahn decomposition there is a Borel set $N\subset\Qq$ with $\eta_C^{\rm sym}(N)<0$. Inner regularity of the finite measures involved gives a compact $\mathcal K\subset N$ with $\eta_C^{\rm sym}(\mathcal K)<0$, and outer regularity an open $O\supset\mathcal K$ with closure in $\Qq$ and $|\eta_C^{\rm sym}|(O\setminus\mathcal K)<|\eta_C^{\rm sym}(\mathcal K)|/2$. A smooth $0\leq\phi\leq1$ equal to $1$ on $\mathcal K$ and supported in $O$ then has $\int\phi\dd\eta_C^{\rm sym}<0$. Replace $\phi$ by $f=(\phi+\phi\circ\tau)/2$, which has the same integral by symmetry of $\eta_C^{\rm sym}$. Extend $f$ to $\widetilde f$ on $[0,1]^2$ oddly across both midlines, $\widetilde f(1-u,v)=\widetilde f(u,1-v)=-\widetilde f(u,v)$. Because $f$ has compact support in $\Qq$, $\widetilde f$ is smooth and vanishes near the boundary of the square and near the midlines. For small $\delta>0$, $B=\Pi+\delta\widetilde f$ has uniform margins and positive density $1+\delta\partial_{12}\widetilde f$, so it is a copula. It satisfies $B(1-u,v)=v-B(u,v)$, the analogous identity in $v$, and $\tau$-symmetry, so it is invariant, and $B-\Pi=\delta f\geq0$ on $\Qq$, so $\Pi\preceq B$. By the representation, $[C,B]-[C,\Pi]=\delta\int f\dd\eta_C^{\rm sym}<0$. The reversed statement follows by applying this to the opposite sign. For exchangeable $C$, $\tau_\#\mu_C=\mu_C$ and $\tau$ commutes with the reflections up to exchanging $r_1$ and $r_2$, so $\tau_\#\eta_C=\eta_C$.
+\end{proof}
+
+\begin{corollary}\label{cor:finite}
+No finite collection of comparisons $[C,B_j]\geq[C,A_j]$, $j=1,\ldots,J$, with invariant $A_j\preceq B_j$, characterises PMI, even among exchangeable copulas with smooth positive densities arbitrarily close to $\Pi$: some such copula satisfies all $J$ comparisons with equality and is not PMI.
+\end{corollary}
+\begin{proof}
+Let $G_j=B_j-A_j$ on $\Qq$. The smooth $\tau$-symmetric functions with compact support in $\Qq$ form an infinite-dimensional space, so it contains a nonzero $\varphi$ with $\int_{\Qq}G_j\varphi\dd u\dd v=0$ for all $j$; replacing $\varphi$ by $-\varphi$ if necessary, $\varphi$ is negative somewhere. Define $\omega=\varphi$ on $\Qq$ and extend it by $\omega(1-u,v)=\omega(u,1-v)=-\omega(u,v)$, with $\omega=0$ elsewhere. Then $\omega$ integrates to zero along every horizontal and vertical line, so for small $\delta>0$ the function $1+\delta\omega$ is the positive density of an exchangeable copula $C$. Its folded density is $F_c=4\delta\varphi$, which is negative somewhere, so $C$ is not PMI. By the representation in the proof of Theorem~\ref{thm:dual}, $[C,B_j]-[C,A_j]=4\delta\int_{\Qq}G_j\varphi=0$ for every $j$.
+\end{proof}
+
+\section{Shared frailty: two values suffice for PMI, three can fail}\label{sec:frailty}
+This section studies the Archimedean copulas that arise from a common random rate, the shared-frailty models used in survival analysis and credit risk, and finds the least number of frailty values that allows PMI to fail.
+
+Let $Z$ take positive values $z_i$ with probabilities $p_i$. Given $Z$, let $E_1,E_2,\ldots$ be independent exponential variables with rate $Z$, and let $\psi(t)=\EE e^{-Zt}=\sum_ip_ie^{-z_it}$. Then the ranks $U_j=\psi(E_j)$ are uniform and conditionally independent given $Z$, and their joint law is the Archimedean copula with inverse generator $\psi$, in every dimension~\cite{mcneil}. Each pair is PQD, because $\PP(U_1\leq u\mid Z)$ and $\PP(U_2\leq v\mid Z)$ are both decreasing functions of $Z$ and therefore positively correlated. Write $t=\psi^{-1}(u)$ and
+\[
+ f_i(u)=\frac{z_ie^{-z_it}}{\sum_jp_jz_je^{-z_jt}},\qquad d_i(u)=f_i(u)-f_i(1-u),
+\]
+so that $f_i$ is the conditional density of a rank given $Z=z_i$ and $\sum_ip_if_i=1$. Conditional independence gives
+\begin{equation}
+ c(u,v)=\sum_ip_if_i(u)f_i(v),\qquad F_c(u,v)=\sum_ip_id_i(u)d_i(v),\qquad\sum_ip_id_i=0 .\label{eq:gram}
+\end{equation}
+In particular $F_c(u,u)\geq0$ always; PMI requires $F_c(u,v)\geq0$ also when $u\neq v$.
+
+\begin{proposition}\label{prop:frailty}
+(a) If the frailty takes at most two values, the copula is PMI.
+(b) For the three equally likely values $1,2,m$, the copula fails PMI for all sufficiently large $m$, and $m=200$ is an explicit example.
+(c) Every finite frailty mixture has a density that is multivariate totally positive of order two (MTP2) in every dimension.
+\end{proposition}
+\begin{proof}
+(a) One value gives $\Pi$. For two values $z_1<z_2$,
+$f_1(u)=[p_1+p_2(z_2/z_1)e^{-(z_2-z_1)t}]^{-1}$ decreases in $u$ (as $u$ grows, $t$ falls), so $d_1\geq0$ on $(0,1/2)$. Also $d_2=-(p_1/p_2)d_1$ by~\eqref{eq:gram}, so $F_c=(p_1+p_1^2/p_2)\,d_1(u)d_1(v)\geq0$ on $\Qq$.
+
+(b) Let $x_m=X_m(u)$ solve $x+x^2+x^m=3u$, so that $f_i(u)=a_ix_m^{a_i-1}/F_m'(x_m)$ with rates $(a_1,a_2,a_3)=(1,2,m)$ and $F_m(x)=(x+x^2+x^m)/3$. If $u<2/3$ then $x_m\to x$, the root in $(0,1)$ of $x+x^2=3u$, and $mx_m^{m-1}\to0$, so $(f_1,f_2,f_3)\to3(1,2x,0)/(1+2x)$. If $u>2/3$ then $x_m\to1$ and $x_m^m\to3u-2>0$, so $mx_m^{m-1}\to\infty$ and $(f_1,f_2,f_3)\to(0,0,3)$. By~\eqref{eq:gram} the limiting density is $0$ when one argument is below $2/3$ and the other above, and equals
+\[
+ c_*(u,v)=\frac{3(1+4xy)}{(1+2x)(1+2y)},\qquad x+x^2=3u,\quad y+y^2=3v,
+\]
+when both are below $2/3$. Take $u=2/5$ and $v=3/10$. Then $u,1-u,v<2/3<1-v$, so the folded density converges to $c_*(u,v)-c_*(1-u,v)$. The $x$-derivative of $c_*$ is a positive multiple of $4y-2$, and $y>1/2$ because $1/2+1/4<9/10$. Since $x$ increases with $u$, the limit is strictly negative, and so is $F_c(2/5,3/10)$ for all large $m$. For $m=200$, exact rational bisection of $x+x^2+x^{200}=3u$ at $u\in\{0.3,0.4,0.6,0.7\}$, followed by monotone interval bounds on numerators and denominators of the density, gives $-0.00653<F_c(2/5,3/10)<-0.00652$ (Appendix~\ref{app:scripts}). By continuity a small rectangle around $(2/5,3/10)$ has negative $\eta_C$-mass.
+
+(c) In $d$ dimensions the density is $\prod_i|\psi'(t_i)|^{-1}\,\Lambda(\sum_it_i)$ with $t_i=\psi^{-1}(u_i)$ and $\Lambda(s)=(-1)^d\psi^{(d)}(s)=\sum_jp_jz_j^de^{-z_js}$. The second derivative of $\log\Lambda$ is the variance of the rate under weights proportional to $p_jz_j^de^{-z_js}$, so $\log\Lambda$ is convex. This is the criterion of M\"uller and Scarsini~\cite{ms} for MTP2 Archimedean copulas; directly, the mixed second partials of the log-density in two distinct coordinates are $(\log\Lambda)''t_i't_j'\geq0$, which gives log-supermodularity.
+\end{proof}
+
+Fuchs and Tschimpke note that a density which is $2$-increasing (supermodular) implies PMI~\cite[Remark~1]{FT}. Log-supermodularity, even of every order, does not.
+
+\begin{corollary}\label{cor:tp}
+There is a shared-frailty Archimedean copula that fails PMI and whose density $c$ is strictly totally positive of every order: for any $N\geq1$, $u_1<\cdots<u_N$ and $v_1<\cdots<v_N$ in $(0,1)$, $\det[c(u_i,v_j)]>0$.
+\end{corollary}
+\begin{proof}
+Let $F_{200}(x)=(x+x^2+x^{200})/3$ and $F_\delta=(1-\delta)F_{200}+\delta x/(2-x)$ for $0<\delta<1$. The second term is the generating function $\sum_{k\geq1}2^{-k}x^k$, so $F_\delta(x)=\sum_kw_kx^k$ with every $w_k>0$: it is the frailty model with positive weight on every positive integer rate. As $\delta\downarrow0$, $F_\delta\to F_{200}$ in $C^2[0,1]$ with $F_\delta'$ bounded below, so the density converges pointwise and the strictly negative folded value of Proposition~\ref{prop:frailty}(b) persists for small $\delta$. After dividing by the positive factors $F_\delta'(X(u))$ and $F_\delta'(X(v))$, the density is the kernel $\sum_kw_kk^2x^{k-1}y^{k-1}$ evaluated at $x=X(u)$, $y=X(v)$, with $X$ increasing. For each partial sum, the Cauchy--Binet formula writes an $N\times N$ minor as a sum, over $N$-subsets of exponents, of a positive weight times two generalised Vandermonde determinants. For increasing positive points and increasing nonnegative integer exponents these determinants are positive: each is an ordinary Vandermonde determinant times a Schur polynomial, which has nonnegative coefficients and is positive at positive arguments. Once the partial sum contains the exponents $0,\ldots,N-1$, these contribute a fixed positive amount, and entrywise convergence carries the bound to the full series.
+\end{proof}
+
+\section{Sharp bounds under finite exchangeability}\label{sec:finite}
+This section determines how negative the combination $D_s=3\gamma-2s\rho$ can be when the pair of ranks is part of a longer exchangeable vector, the situation of $n$ interchangeable units in a cluster.
+
+\paragraph{Setting.} A pair of uniform ranks is \emph{$n$-extendible} if it is the law of the first two coordinates of an exchangeable vector $(U_1,\ldots,U_n)$ with uniform margins. This is stronger than exchangeability of the pair. For $n=2$ the minimum of $D_s$ is $-(3-2s)$, attained at $W$; Ansari, Rockel and Steinma{\ss}l~\cite{ars} determine the attainable pairs $(\rho,\gamma)$ over all copulas. Konstantopoulos and Yuan~\cite{ky} study when a given finitely exchangeable law extends further; here we ask what the constraint does to two scalar summaries.
+
+For a slope $s\leq1$ put $a_s=3-2s$ and $h_s(x)=x-sx^2$, and on $L^2[0,1]$ use the positive semidefinite form
+\[
+ \langle f,g\rangle_s=\int_0^1fg-s\int_0^1f\int_0^1g .
+\]
+The restriction $s\leq1$ is exactly what makes this form positive semidefinite. For odd $n$ let $I_{n,s}$ be a sublevel set $\{x\in[0,1]:h_s(x)\leq y^*\}$ of Lebesgue measure $1/n$. Because $h_s$ is concave for $s\geq0$ and increasing for $s\leq0$, with $h_s(1/n)\leq h_s(1)$ iff $s\leq n/(n+1)$,
+\[
+ I_{n,s}=\begin{cases}[0,1/n], & s\leq n/(n+1),\\[2pt] [0,b]\cup[1-b',1], & n/(n+1)<s\leq1,\end{cases}\qquad b=\tfrac12\Big(\frac1n+\frac1s-1\Big),\quad b'=\frac1n-b .
+\]
+In the second case the two pieces have equal $h_s$-values at their inner ends because $b+(1-b')=1/s$ is twice the axis of the parabola.
+
+\begin{theorem}\label{thm:finite}
+Let $n\geq2$ and $-n/2\leq s\leq1$. Over $n$-extendible pairs, $D_s=3\gamma-2s\rho$ takes exactly the values in $[d_n(s),3-2s]$, where
+\[
+ d_n(s)=\begin{cases}
+ -\dfrac{3-2s}{n-1}, & n\text{ even},\\[8pt]
+ \dfrac{2s(n^2+n+1)-3n(n+1)}{n^3}, & n\text{ odd},\ s\leq\dfrac{n}{n+1},\\[8pt]
+ \dfrac{s(n-1)^2}{2n^3}-\dfrac{3}{2ns}, & n\text{ odd},\ s\geq\dfrac{n}{n+1}.
+ \end{cases}
+\]
+For odd $n$ both expressions equal $\big(6\int_{I_{n,s}}h_s-a_s\big)/(n-1)$, and they agree in value and slope at $s=n/(n+1)$. For pairs that are $n$-extendible for every $n$, the range is $[0,3-2s]$ for every $s\leq1$.
+\end{theorem}
+
+\begin{proof}
+\emph{The energy identity.} For each coordinate let $R_i,S_i$ be its magnitude and sign (Identity~3) and define the random function $X_i(t)=\sqrt6\,S_i\ind\{t\leq R_i\}$ on $[0,1]$. By~\eqref{eq:signmag}, $\EE\langle X_1,X_2\rangle_s=6\EE[S_1S_2(\min(R_1,R_2)-sR_1R_2)]=D_s$, and $\EE\|X_i\|_s^2=6\EE h_s(R_i)=a_s$. Exchangeability gives
+\begin{equation}
+ \EE\Big\|\sum_{i=1}^nX_i\Big\|_s^2=na_s+n(n-1)D_s .\label{eq:energy}
+\end{equation}
+Positivity of the left side gives $D_s\geq-a_s/(n-1)$, the analogue of the classical bound $-1/(n-1)$ for equicorrelated variables, and Cauchy--Schwarz gives $D_s\leq a_s$, attained by equal ranks.
+
+\emph{Even $n$.} Take $n/2$ independent pairs $(U,1-U)$ with uniform $U$ and permute all coordinates uniformly at random. Each pair contributes the zero function to $\sum_iX_i$, so the left side of~\eqref{eq:energy} vanishes and $D_s=-a_s/(n-1)$.
+
+\emph{Odd $n$, lower bound.} Fix a sample and let $K(t)=\sum_iS_i\ind\{t\leq R_i\}$, an integer-valued step function, so that $\|\sum_iX_i\|_s^2=6\big[\int K^2-s(\int K)^2\big]$. On $[0,\min_iR_i)$ all $n$ indicators equal one and $K$ is a sum of an odd number of signs, hence odd. On $(\max_iR_i,1]$, $K=0$.
+
+\emph{Case $0\leq s\leq1$.} Let $p$ be the measure of $\{t:K(t)\text{ odd}\}$, so $\min_iR_i\leq p\leq\max_iR_i$. Then $\int K^2\geq p$. For independent uniform $t,t'$, $(K(t)-K(t'))^2\geq1$ when their parities differ, an event of probability $2p(1-p)$, so $\Var_tK(t)=\frac12\EE(K(t)-K(t'))^2\geq p(1-p)$. Hence
+\[
+ \int K^2-s\Big(\int K\Big)^2=(1-s)\int K^2+s\Var_tK\geq(1-s)p+sp(1-p)=h_s(p)\geq\min_ih_s(R_i),
+\]
+the last step by concavity of $h_s$ on $[\min_iR_i,\max_iR_i]$.
+
+\emph{Case $-n/2\leq s<0$.} Put $q=-s>0$ and $r=\min_iR_i$, and let $K\equiv k$ on $[0,r)$ with $k$ odd. Let $\beta=\int_r^1K$. Since $K$ is integer-valued, $\int_r^1K^2\geq\int_r^1|K|\geq|\beta|$. Thus
+\[
+ \int K^2+q\Big(\int K\Big)^2\geq k^2r+|\beta|+q(|k|r-|\beta|)^2 .
+\]
+If $|k|\geq3$ the right side is at least $9r$. If $|k|=1$, minimising $b+q(r-b)^2$ over $b\geq0$ shows that the right side is at least $\varphi_q(r)$, where $\varphi_q(r)=r+qr^2$ for $r\leq1/(2q)$ and $\varphi_q(r)=2r-1/(4q)$ otherwise. Since $\varphi_q(r)\leq2r$, in both cases the energy per sample is at least $6\varphi_q(\min_iR_i)$, and $\varphi_q$ is increasing.
+
+\emph{Averaging.} Each $R_i$ is uniform, so the union bound gives $\PP(\min_iR_i\leq x)\leq\min\{1,nx\}$ and, for each $y$, $\PP(\min_ih_s(R_i)\leq y)\leq\min\{1,n|\{h_s\leq y\}|\}$. The right sides are the distribution functions of $T$ and of $h_s(T)$ for $T$ uniform on $I_{n,s}$, because $I_{n,s}$ is a sublevel set of $h_s$ of measure $1/n$. Taking expectations of the increasing functions involved gives, for $0\leq s\leq1$, $\EE\|\sum X_i\|_s^2\geq6\EE h_s(T)=6n\int_{I_{n,s}}h_s$. For $-n/2\leq s<0$ we have $I_{n,s}=[0,1/n]$ and $T\leq1/n\leq1/(2q)$, so $\varphi_q(T)=h_s(T)$ and the same bound follows. Substituting into~\eqref{eq:energy} gives $D_s\geq\big(6\int_{I_{n,s}}h_s-a_s\big)/(n-1)$.
+
+\emph{Odd $n$, attainment.} Give one coordinate, the \emph{singleton}, a magnitude uniform on $I_{n,s}$ and an independent fair sign. Form $(n-1)/2$ antithetic pairs: each pair takes one magnitude uniform on $[0,1]\setminus I_{n,s}$ and the two opposite signs, in a fair random order. Set $U_i=(1+S_iR_i)/2$ and permute all $n$ coordinates uniformly. A given coordinate is the singleton with probability $1/n=|I_{n,s}|$, so its magnitude has density $1$ on $I_{n,s}$ and density $\frac{n-1}{n}\cdot\frac{n}{n-1}=1$ on the complement: it is uniform, and its sign is fair and independent of it. The pairs contribute nothing to $K$, so $K=S_0\ind\{t\leq R_0\}$ for the singleton magnitude $R_0$ and the energy is $6h_s(R_0)$, whose mean is $6n\int_{I_{n,s}}h_s$. This is equality in the lower bound.
+
+\emph{The whole interval and closed forms.} $D_s$ is linear in the copula, so mixtures of the extremal law and equal ranks give every intermediate value. The closed forms follow by integrating $h_s$ over $I_{n,s}$; the agreement of value and slope at $s=n/(n+1)$ is a direct computation, checked exactly in Appendix~\ref{app:scripts}.
+
+\emph{Infinite extendibility.} Letting $n\to\infty$ through even values gives $D_s\geq0$ for every $s\leq1$. Independence and equal ranks extend to every length, and their mixtures fill $[0,a_s]$.
+\end{proof}
+
+\begin{corollary}\label{cor:endpoint}
+For $n$ exchangeable ranks, the minimum of $3\gamma-2\rho$ is $-1/(n-1)$ for even $n$ and $-(2n^2+2n-1)/(2n^3)$ for odd $n$; the minimum common Gini's gamma is $-1/(n-1)$ for even $n$ and $-(n+1)/n^2$ for odd $n$. For $n=3$ these are $-23/54$ and $-4/9$; for $n=5$ they are $-59/250$ and $-6/25$.
+\end{corollary}
+\begin{proof}
+Take $s=1$ and $s=0$ in Theorem~\ref{thm:finite}; for $s=0$, $D_0=3\gamma$.
+\end{proof}
+
+\begin{remark}[A probabilistic proof of the even bound]\label{rem:mixture}
+Pick two indices $I,J$ independently and uniformly from $\{1,\ldots,n\}$, with replacement. Given the vector, $U_I$ and $U_J$ are independent draws from its empirical distribution, so their copula $C^*=M/n+(n-1)C/n$ is conditionally independent and identically distributed. For such pairs $D_s\geq0$, because $\EE\langle X_1,X_2\rangle_s=\EE\|\EE[X_1\mid\mathcal G]\|_s^2$ for the conditioning $\sigma$-field $\mathcal G$; for $s=1$ this is Lemma~\ref{lem:variance}. Since $D_s(M)=a_s$, $D_s(C)\geq-a_s/(n-1)$. The same argument applies to every concordance measure that is linear in the copula and nonnegative on conditionally independent pairs, for example every generalised Gini's gamma of Section~\ref{sec:gini}. It does not give the odd-$n$ correction, which comes from the parity of $K$.
+\end{remark}
+
+\begin{remark}[Slopes outside the theorem]\label{rem:slopes}
+For $s<-n/2$ and odd $n$, the proof still gives the valid lower bound $D_s\geq\big(6\int_0^{1/n}\varphi_{-s}(x)\dd x-a_s\big)/(n-1)$, but this bound lies strictly below the value of the singleton law, and the exact minimum is open. For $s>1$ the form $\langle\cdot,\cdot\rangle_s$ is indefinite and the method does not apply.
+\end{remark}
+
+\paragraph{Interpretation.} The theorem gives, for each slope in $[-n/2,1]$, a supporting line of the set of pairs $(\rho,\gamma)$ attainable by $n$-extendible pairs; it thus determines part of the boundary of that set. A population value of $3\gamma-2\rho$ below $-23/54$ rules out extension to three exchangeable ranks, and any negative value rules out a conditionally independent and identically distributed representation (Lemma~\ref{lem:variance}). These are population statements; they do not give the sampling uncertainty of estimated concordances.
+
+\section{Generalised Gini matrices}\label{sec:gini}
+This section applies the parity argument to matrices of pairwise concordances, the compatibility problem of Koike and Hofert~\cite{kh}: which matrices arise as the pairwise values of a concordance measure for some random vector?
+
+\paragraph{Setting.} Koike and Hofert~\cite[Theorem~3]{kh} show that each generalised Gini's gamma has the form $\gamma_\nu(C)=\int_{(0,1/2]}\rho\big(G^{-1}(U;p),G^{-1}(V;p)\big)\dd\nu(p)$ for a unique probability measure $\nu$ on $(0,1/2]$, where $G^{-1}(\cdot;p)$ maps the bottom, middle and top rank bands, of probabilities $p$, $1-2p$ and $p$, to $-1,0,1$. In sign--magnitude terms, $G^{-1}(U_i;p)=Y_i(p):=S_i\ind\{R_i\geq1-2p\}$ almost surely, which has mean $0$ and variance $2p$, so
+\[
+ \gamma_\nu(i,j)=\int_{(0,1/2]}\frac{\EE[Y_i(p)Y_j(p)]}{2p}\dd\nu(p).
+\]
+Ordinary Gini's gamma has $\dd\nu=8p\dd p$ and Blomqvist's beta has $\nu=\delta_{1/2}$~\cite[Example~4]{kh}. For a random vector of $n$ uniform ranks let $\Gamma=(\gamma_\nu(i,j))$ with unit diagonal. The set of such matrices lies between the cut polytope (correlation matrices of symmetric $\pm1$ vectors) and the elliptope (all correlation matrices)~\cite[Proposition~5]{kh}. For $n=3$ these give the equicorrelation bounds $-1/3$ and $-1/2$, and a Gaussian copula attains about $-0.379$ for ordinary Gini's gamma~\cite[Example~5]{kh}.
+
+\begin{theorem}\label{thm:gini}
+For $k\geq1$ let $J_{k,\nu}=\int_{(0,1/2]}(1-k+2kp)_+(2p)^{-1}\dd\nu(p)$.
+\begin{enumerate}
+\item If $a\in\mathbb Z^n$ has an odd number $k$ of odd entries, then $a^{\mathsf T}\Gamma a\geq J_{k,\nu}$ for every attainable $\Gamma$. For ordinary Gini's gamma $J_{k,\nu}=1/k$.
+\item The common off-diagonal values of attainable matrices form the interval $[\ell_{n,\nu},1]$, where
+\[
+ \ell_{n,\nu}=-\frac1{n-1}+\frac{\ind\{n\text{ odd}\}}{n(n-1)}J_{n,\nu}.
+\]
+A single law in each dimension attains $\ell_{n,\nu}$ for all $\nu$ simultaneously. For ordinary Gini's gamma $\ell_{n,\nu}=-(n+1)/n^2$ for odd $n$, so the exact three-dimensional interval is $[-4/9,1]$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(1) $a^{\mathsf T}\Gamma a=\int\EE[(\sum_ia_iY_i(p))^2](2p)^{-1}\dd\nu(p)$. When all $k$ coordinates with odd coefficients are active ($Y_i\neq0$), the integer $\sum_ia_iY_i(p)$ is odd, so its square is at least one. Each coordinate is inactive with probability $1-2p$, so by the union bound this event has probability at least $(1-k(1-2p))_+$. Integrating gives the bound. For $\dd\nu=8p\dd p$, $J_{k,\nu}=4\int_{(k-1)/(2k)}^{1/2}(1-k+2kp)\dd p=1/k$.
+
+(2) If all off-diagonal entries equal $z$, then $\ind^{\mathsf T}\Gamma\ind=n+n(n-1)z$. For odd $n$, part~1 with $a=\ind$ gives the lower bound; for even $n$, $\ind^{\mathsf T}\Gamma\ind\geq0$. For even $n$ the antithetic pairs of Theorem~\ref{thm:finite} attain the bound, since they cancel at every threshold $p$. For odd $n$ use the singleton law of Theorem~\ref{thm:finite} with $s=0$, whose singleton magnitude is uniform on $[0,1/n]$: the pairs cancel, $(\sum_iY_i(p))^2$ equals the singleton's activation indicator, and its expectation is $\PP(R_0\geq1-2p)=(1-n+2np)_+$ for every $p$. Uniform permutation makes all off-diagonal entries equal. Equal ranks give $z=1$, mixtures give the values in between, and correlation bounds give $z\leq1$.
+\end{proof}
+
+For $\nu=\delta_{1/2}$ the variables $Y_i=S_i$ are symmetric signs, part~1 reduces to the elementary parity inequality $(\sum_ia_iS_i)^2\geq1$ for odd $\sum_ia_i$, a familiar valid inequality for the cut polytope, and part~2 recovers the cut-polytope value $-1/n$ for odd $n$.
+
+\section{Discussion}\label{sec:discussion}
+This section summarises what the results mean for practice and lists the questions left open.
+
+\paragraph{Model exclusion.} Theorem~\ref{thm:local} shows that a population violation of $3\gamma\geq2\rho$ is compatible with a PQD Archimedean model, so the Fuchs--Tschimpke tests exclude PMI models, not all PQD Archimedean models. The violations constructed here are tiny: at $\epsilon=-10^{-8}$ the first-order value of $3\gamma-2\rho$ is about $-1.9\times10^{-10}$, far below any sampling error. They settle the logical question only; how large a violation PQD Archimedean models can produce is open. In the other direction, Lemma~\ref{lem:variance} shows that every shared-frailty model satisfies $3\gamma\geq2\rho$ strictly away from independence, and a negative population value excludes every conditionally independent and identically distributed model. Corollary~\ref{cor:finite} shows that a finite battery of concordance comparisons cannot certify PMI.
+
+\paragraph{Clustered data.} Theorem~\ref{thm:finite} constrains models for clusters of $n$ interchangeable units, such as members of a household, patients in a clinic or loans in a pool. Any exchangeable model for clusters of size three must have pairwise Gini's gamma at least $-4/9$ and $3\gamma-2\rho$ at least $-23/54$. A finite-sample test of these constraints would need the joint asymptotic distribution of the estimators, which is not attempted here.
+
+\paragraph{Open problems.} (i) The exact range of $3\gamma-2s\rho$ under $n$-extendibility for $s<-n/2$ and for $s>1$, and hence the full set of attainable $(\rho,\gamma)$ pairs for $n$ exchangeable ranks. (ii) The full compatibility set of generalised Gini matrices beyond the equicorrelation slice, and whether the inequalities of Theorem~\ref{thm:gini} together with positive semidefiniteness characterise it. (iii) Which standard Archimedean families (Clayton with positive parameter, Gumbel, Joe, Ali--Mikhail--Haq) are PMI.
+
+\appendix
+\section{Verification scripts}\label{app:scripts}
+Apart from the explicit value $m=200$ in Proposition~\ref{prop:frailty}(b), the proofs are complete without computation. Two scripts accompany the paper as independent checks.
+
+\texttt{verify.py} uses only the Python standard library and exact rational arithmetic, and stops with an error message if any check fails. It checks: the constants in the proof of Theorem~\ref{thm:local} ($24V_2=2/15$, the slope $24(V_2-2V_{100})>1/75$, the arithmetic of the remainder bound $48\cdot1604\cdot10^{-8}<1/75$, the margin $>4/5$ for $f_A$, and positivity of the densities); the rational enclosure $-0.00653<F_c(2/5,3/10)<-0.00652$ for the rates $(1,2,200)$; agreement of the closed forms of Theorem~\ref{thm:finite} with the integral formula, and of the two odd branches in value and slope at $s=n/(n+1)$; the corollary formulas for odd $n\leq101$; and $J_k=1/k$. As an independent check of attainment, it integrates the copula-level kernel $6(|u+v-1|-|u-v|)-2s(12uv-3)$ exactly along the extremal laws of Theorem~\ref{thm:finite} and recovers $d_n(s)$ for $n=2,\ldots,9$ and seven slopes in $[-n/2,1]$ each.
+
+\texttt{check\_grid.py} (NumPy and SciPy) restricts magnitudes to $m$ point masses and minimises $D_s$ over all exchangeable laws by linear programming, for $(n,m)\in\{(3,6),(4,4),(5,5)\}$ and $s\in\{-n/2,-1,0,0.8,0.95,1\}$. The optima agree with the discrete analogue of the extremal construction to within $10^{-9}$. This tests the mechanism on atomic grids; it is not a proof of the continuous theorem.
+
+\paragraph{Provenance.} The results, proofs and text were produced with AI assistance and checked by the verification scripts and by internal AI-assisted proof audits. They have not been refereed.
+
+\begin{thebibliography}{9}
+\bibitem{ars} Ansari, J., Rockel, M., \& Steinma{\ss}l, S. (2026). The exact region determined by Spearman's rho and Gini's gamma. arXiv:2609.19890. \url{https://arxiv.org/abs/2609.19890}
+\bibitem{fuchs} Fuchs, S. (2024). Quantifying directed dependence via dimension reduction. \emph{Journal of Multivariate Analysis, 201}, 105266. \url{https://doi.org/10.1016/j.jmva.2023.105266}
+\bibitem{FT} Fuchs, S., \& Tschimpke, M. (2024). A novel positive dependence property and its impact on a popular class of concordance measures. \emph{Journal of Multivariate Analysis, 200}, 105259. \url{https://doi.org/10.1016/j.jmva.2023.105259}
+\bibitem{graham} Graham, P. (2026). \emph{A counterexample on two kinds of positive dependence} [Preprint, deposited 1 November 2026]. Zenodo. \url{https://doi.org/10.5281/zenodo.23862336}
+\bibitem{kh} Koike, T., \& Hofert, M. (2023). Matrix compatibility and correlation mixture representation of generalized Gini's gamma. \emph{Canadian Journal of Statistics, 51}(4), 1111--1125. \url{https://doi.org/10.1002/cjs.11748}
+\bibitem{ky} Konstantopoulos, T., \& Yuan, L. (2019). On the extendibility of finitely exchangeable probability measures. \emph{Transactions of the American Mathematical Society, 371}(10), 7067--7092. \url{https://doi.org/10.1090/tran/7701}
+\bibitem{mcneil} McNeil, A. J., \& Ne\v{s}lehov\'a, J. (2009). Multivariate Archimedean copulas, $d$-monotone functions and $\ell_1$-norm symmetric distributions. \emph{The Annals of Statistics, 37}(5B), 3059--3097. \url{https://doi.org/10.1214/07-AOS556}
+\bibitem{ms} M\"uller, A., \& Scarsini, M. (2005). Archimedean copulae and positive dependence. \emph{Journal of Multivariate Analysis, 93}(2), 434--445. \url{https://doi.org/10.1016/j.jmva.2004.04.003}
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,262 @@
+{
+ "schemaVersion": "1.0",
+ "provenance": "Compiled 26 November 2026 for 0.1.0-candidate from the dated searches of the internal AI-assisted review (24 November 2026), the source reading record, the corpus overlap check, refs.bib, REVIEW_SUMMARY.md and the paper's own positioning (Section 1, Section 8). It records scrutiny performed, not historical priority.",
+ "contributionMap": [
+  {
+   "claim": "All four Fuchs-Tschimpke implications (PMI=>PQD, NMI=>NQD, NQD=>NMI, PQD=>PMI) fail for real-analytic Archimedean copulas arbitrarily close to independence, with explicit parameters, in every finite dimension",
+   "unit": "statement",
+   "paperLocation": "Theorem 3.1; Remark 3.2",
+   "searches": [
+    {
+     "date": "2026-11-24",
+     "corpus": "Semantic Scholar citation lists of Fuchs-Tschimpke (arXiv:2306.09676) and Koike-Hofert, arXiv full-text queries and web searches by the internal review panel (Semantic Scholar relevance search rate-limited); the Evidence Press corpus (site papers/ and the batch corpus list)",
+     "query": "combinations of \"positive measure inducing\", \"Fuchs Tschimpke conjecture\", \"Archimedean\" with \"PQD\"/\"PMI\", \"Gini's gamma\" with \"exchangeable\" or \"compatible\", \"generalized Gini matrix compatibility\", \"finitely exchangeable ranks\""
+    },
+    {
+     "date": "2026-11-24",
+     "corpus": "the cited works, obtained and read: Fuchs-Tschimpke (arXiv:2306.09676), Graham (Zenodo 10.5281/zenodo.23862336), Ansari-Rockel-Steinmaßl (arXiv:2609.19890), Koike-Hofert (arXiv:2011.09053), Fuchs 2024 (arXiv:2112.10147), Müller-Scarsini (2003 working paper), McNeil-Nešlehová (arXiv:0908.3750), Konstantopoulos-Yuan (arXiv:1501.06188)",
+     "query": "FT Definition 1, (2.2), Theorem 1, Corollary 1, Remarks 1 and 3, Example 8, Conjecture 1; Graham abstract and Section 1 (scope: PQD does not imply PMI only); ARS Lemma 3.1; KH Theorem 3, Proposition 5, Examples 4-5; Fuchs Theorem 6 and Corollary 5; Müller-Scarsini Theorem 2.11"
+    }
+   ],
+   "closestPriorWork": "Graham (2026) refuted PQD=>PMI with a different construction and left the other three open",
+   "verdict": "partially-known-cited",
+   "verdictNote": "PQD=>PMI first refuted by Graham, credited; the other three directions and the explicit smooth examples are new in the searched sources"
+  },
+  {
+   "claim": "Ordered concordance comparisons detect exactly the symmetrised reflected measure; no finite family characterises PMI",
+   "unit": "statement",
+   "paperLocation": "Theorem 4.1; Corollary 4.2",
+   "searches": [
+    {
+     "date": "2026-11-24",
+     "corpus": "Semantic Scholar citation lists of Fuchs-Tschimpke (arXiv:2306.09676) and Koike-Hofert, arXiv full-text queries and web searches by the internal review panel (Semantic Scholar relevance search rate-limited); the Evidence Press corpus (site papers/ and the batch corpus list)",
+     "query": "combinations of \"positive measure inducing\", \"Fuchs Tschimpke conjecture\", \"Archimedean\" with \"PQD\"/\"PMI\", \"Gini's gamma\" with \"exchangeable\" or \"compatible\", \"generalized Gini matrix compatibility\", \"finitely exchangeable ranks\""
+    },
+    {
+     "date": "2026-11-24",
+     "corpus": "the cited works, obtained and read: Fuchs-Tschimpke (arXiv:2306.09676), Graham (Zenodo 10.5281/zenodo.23862336), Ansari-Rockel-Steinmaßl (arXiv:2609.19890), Koike-Hofert (arXiv:2011.09053), Fuchs 2024 (arXiv:2112.10147), Müller-Scarsini (2003 working paper), McNeil-Nešlehová (arXiv:0908.3750), Konstantopoulos-Yuan (arXiv:1501.06188)",
+     "query": "FT Definition 1, (2.2), Theorem 1, Corollary 1, Remarks 1 and 3, Example 8, Conjecture 1; Graham abstract and Section 1 (scope: PQD does not imply PMI only); ARS Lemma 3.1; KH Theorem 3, Proposition 5, Examples 4-5; Fuchs Theorem 6 and Corollary 5; Müller-Scarsini Theorem 2.11"
+    }
+   ],
+   "closestPriorWork": "Fuchs-Tschimpke Theorem 1 (sufficiency direction)",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "sufficiency is FT Theorem 1, credited; necessity and the finite-family statement not found"
+  },
+  {
+   "claim": "Shared frailty: two values give PMI; three values can fail it, even TP of every order",
+   "unit": "statement",
+   "paperLocation": "Proposition 5.1; Corollary 5.2",
+   "searches": [
+    {
+     "date": "2026-11-24",
+     "corpus": "Semantic Scholar citation lists of Fuchs-Tschimpke (arXiv:2306.09676) and Koike-Hofert, arXiv full-text queries and web searches by the internal review panel (Semantic Scholar relevance search rate-limited); the Evidence Press corpus (site papers/ and the batch corpus list)",
+     "query": "combinations of \"positive measure inducing\", \"Fuchs Tschimpke conjecture\", \"Archimedean\" with \"PQD\"/\"PMI\", \"Gini's gamma\" with \"exchangeable\" or \"compatible\", \"generalized Gini matrix compatibility\", \"finitely exchangeable ranks\""
+    },
+    {
+     "date": "2026-11-24",
+     "corpus": "the cited works, obtained and read: Fuchs-Tschimpke (arXiv:2306.09676), Graham (Zenodo 10.5281/zenodo.23862336), Ansari-Rockel-Steinmaßl (arXiv:2609.19890), Koike-Hofert (arXiv:2011.09053), Fuchs 2024 (arXiv:2112.10147), Müller-Scarsini (2003 working paper), McNeil-Nešlehová (arXiv:0908.3750), Konstantopoulos-Yuan (arXiv:1501.06188)",
+     "query": "FT Definition 1, (2.2), Theorem 1, Corollary 1, Remarks 1 and 3, Example 8, Conjecture 1; Graham abstract and Section 1 (scope: PQD does not imply PMI only); ARS Lemma 3.1; KH Theorem 3, Proposition 5, Examples 4-5; Fuchs Theorem 6 and Corollary 5; Müller-Scarsini Theorem 2.11"
+    }
+   ],
+   "closestPriorWork": "Müller-Scarsini MTP2 criterion; Fuchs (2024) conditionally i.i.d. representation",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "tools credited; threshold not found"
+  },
+  {
+   "claim": "Exact range of 3 gamma - 2 s rho for n-extendible pairs, -n/2 <= s <= 1 (n = 3: gamma >= -4/9, 3 gamma - 2 rho >= -23/54)",
+   "unit": "statement",
+   "paperLocation": "Theorem 6.1; Corollary 6.2",
+   "searches": [
+    {
+     "date": "2026-11-24",
+     "corpus": "Semantic Scholar citation lists of Fuchs-Tschimpke (arXiv:2306.09676) and Koike-Hofert, arXiv full-text queries and web searches by the internal review panel (Semantic Scholar relevance search rate-limited); the Evidence Press corpus (site papers/ and the batch corpus list)",
+     "query": "combinations of \"positive measure inducing\", \"Fuchs Tschimpke conjecture\", \"Archimedean\" with \"PQD\"/\"PMI\", \"Gini's gamma\" with \"exchangeable\" or \"compatible\", \"generalized Gini matrix compatibility\", \"finitely exchangeable ranks\""
+    },
+    {
+     "date": "2026-11-24",
+     "corpus": "the cited works, obtained and read: Fuchs-Tschimpke (arXiv:2306.09676), Graham (Zenodo 10.5281/zenodo.23862336), Ansari-Rockel-Steinmaßl (arXiv:2609.19890), Koike-Hofert (arXiv:2011.09053), Fuchs 2024 (arXiv:2112.10147), Müller-Scarsini (2003 working paper), McNeil-Nešlehová (arXiv:0908.3750), Konstantopoulos-Yuan (arXiv:1501.06188)",
+     "query": "FT Definition 1, (2.2), Theorem 1, Corollary 1, Remarks 1 and 3, Example 8, Conjecture 1; Graham abstract and Section 1 (scope: PQD does not imply PMI only); ARS Lemma 3.1; KH Theorem 3, Proposition 5, Examples 4-5; Fuchs Theorem 6 and Corollary 5; Müller-Scarsini Theorem 2.11"
+    }
+   ],
+   "closestPriorWork": "Ansari-Rockel-Steinmaßl exact (rho, gamma) region without exchangeability; Konstantopoulos-Yuan on extendibility",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "sign-magnitude representation credited to ARS Lemma 3.1"
+  },
+  {
+   "claim": "Exact equicorrelation slice of every generalised Gini compatibility set; integer quadratic inequalities",
+   "unit": "statement",
+   "paperLocation": "Theorem 7.1",
+   "searches": [
+    {
+     "date": "2026-11-24",
+     "corpus": "Semantic Scholar citation lists of Fuchs-Tschimpke (arXiv:2306.09676) and Koike-Hofert, arXiv full-text queries and web searches by the internal review panel (Semantic Scholar relevance search rate-limited); the Evidence Press corpus (site papers/ and the batch corpus list)",
+     "query": "combinations of \"positive measure inducing\", \"Fuchs Tschimpke conjecture\", \"Archimedean\" with \"PQD\"/\"PMI\", \"Gini's gamma\" with \"exchangeable\" or \"compatible\", \"generalized Gini matrix compatibility\", \"finitely exchangeable ranks\""
+    },
+    {
+     "date": "2026-11-24",
+     "corpus": "the cited works, obtained and read: Fuchs-Tschimpke (arXiv:2306.09676), Graham (Zenodo 10.5281/zenodo.23862336), Ansari-Rockel-Steinmaßl (arXiv:2609.19890), Koike-Hofert (arXiv:2011.09053), Fuchs 2024 (arXiv:2112.10147), Müller-Scarsini (2003 working paper), McNeil-Nešlehová (arXiv:0908.3750), Konstantopoulos-Yuan (arXiv:1501.06188)",
+     "query": "FT Definition 1, (2.2), Theorem 1, Corollary 1, Remarks 1 and 3, Example 8, Conjecture 1; Graham abstract and Section 1 (scope: PQD does not imply PMI only); ARS Lemma 3.1; KH Theorem 3, Proposition 5, Examples 4-5; Fuchs Theorem 6 and Corollary 5; Müller-Scarsini Theorem 2.11"
+    }
+   ],
+   "closestPriorWork": "Koike-Hofert (bounds between cut polytope and elliptope; Gaussian example about -0.379)",
+   "verdict": "new-in-bounded-search",
+   "verdictNote": "answers the equicorrelation part of a question Koike and Hofert left open; the full sets remain open"
+  },
+  {
+   "claim": "Method: polynomial perturbation of independence tracking the quadrant sign and the folded-density sign separately; sign-magnitude parity argument for odd numbers of exchangeable ranks",
+   "unit": "method",
+   "paperLocation": "Sections 3 and 6",
+   "searches": [
+    {
+     "date": "2026-11-24",
+     "corpus": "Semantic Scholar citation lists of Fuchs-Tschimpke (arXiv:2306.09676) and Koike-Hofert, arXiv full-text queries and web searches by the internal review panel (Semantic Scholar relevance search rate-limited); the Evidence Press corpus (site papers/ and the batch corpus list)",
+     "query": "combinations of \"positive measure inducing\", \"Fuchs Tschimpke conjecture\", \"Archimedean\" with \"PQD\"/\"PMI\", \"Gini's gamma\" with \"exchangeable\" or \"compatible\", \"generalized Gini matrix compatibility\", \"finitely exchangeable ranks\""
+    },
+    {
+     "date": "2026-11-24",
+     "corpus": "the cited works, obtained and read: Fuchs-Tschimpke (arXiv:2306.09676), Graham (Zenodo 10.5281/zenodo.23862336), Ansari-Rockel-Steinmaßl (arXiv:2609.19890), Koike-Hofert (arXiv:2011.09053), Fuchs 2024 (arXiv:2112.10147), Müller-Scarsini (2003 working paper), McNeil-Nešlehová (arXiv:0908.3750), Konstantopoulos-Yuan (arXiv:1501.06188)",
+     "query": "FT Definition 1, (2.2), Theorem 1, Corollary 1, Remarks 1 and 3, Example 8, Conjecture 1; Graham abstract and Section 1 (scope: PQD does not imply PMI only); ARS Lemma 3.1; KH Theorem 3, Proposition 5, Examples 4-5; Fuchs Theorem 6 and Corollary 5; Müller-Scarsini Theorem 2.11"
+    }
+   ],
+   "closestPriorWork": "Ansari-Rockel-Steinmaßl Lemma 3.1; Koike-Hofert Theorem 3",
+   "verdict": "partially-known-cited",
+   "verdictNote": "representations credited; their combination with the parity argument new in the searched sources"
+  }
+ ],
+ "sourcesReadInFull": [
+  {
+   "citation": "Fuchs, S. and Tschimpke, M. (2024), A novel positive dependence property and its impact on a popular class of concordance measures, J. Multivariate Anal. 200, 105259",
+   "usedFor": "PMI definition, ordering theorem, conjecture",
+   "readWhat": "whole paper (arXiv:2306.09676)",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://doi.org/10.1016/j.jmva.2023.105259"
+  },
+  {
+   "citation": "Graham, P. (2026), A counterexample on two kinds of positive dependence, Zenodo preprint",
+   "usedFor": "first counterexample; scope of what it leaves open",
+   "readWhat": "whole preprint text",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://doi.org/10.5281/zenodo.23862336"
+  },
+  {
+   "citation": "Ansari, J., Rockel, M. and Steinmaßl, S. (2026), The exact region determined by Spearman's rho and Gini's gamma, arXiv:2609.19890",
+   "usedFor": "sign-magnitude representation (Lemma 3.1)",
+   "readWhat": "whole paper",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://arxiv.org/abs/2609.19890"
+  },
+  {
+   "citation": "Koike, T. and Hofert, M. (2023), Matrix compatibility and correlation mixture representation of generalized Gini's gamma, Canad. J. Statist. 51, 1111-1125",
+   "usedFor": "generalised Gini representation, compatibility bounds, Gaussian example",
+   "readWhat": "whole paper (arXiv:2011.09053)",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://doi.org/10.1002/cjs.11748"
+  },
+  {
+   "citation": "Fuchs, S. (2024), Quantifying directed dependence via dimension reduction, J. Multivariate Anal. 201, 105266",
+   "usedFor": "conditionally i.i.d. representation (Theorem 6, Corollary 5)",
+   "readWhat": "Sections 3.2-3.3 (arXiv:2112.10147)",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://doi.org/10.1016/j.jmva.2023.105266"
+  },
+  {
+   "citation": "Müller, A. and Scarsini, M. (2005), Archimedean copulae and positive dependence, J. Multivariate Anal. 93, 434-445",
+   "usedFor": "MTP2 criterion",
+   "readWhat": "working-paper version (Theorem 2.11)",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://doi.org/10.1016/j.jmva.2004.04.003"
+  },
+  {
+   "citation": "McNeil, A. J. and Nešlehová, J. (2009), Multivariate Archimedean copulas, d-monotone functions and l1-norm symmetric distributions, Ann. Statist. 37, 3059-3097",
+   "usedFor": "d-dimensional Archimedean conditions",
+   "readWhat": "relevant sections (arXiv:0908.3750)",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://doi.org/10.1214/07-AOS556"
+  },
+  {
+   "citation": "Konstantopoulos, T. and Yuan, L. (2019), On the extendibility of finitely exchangeable probability measures, Trans. Amer. Math. Soc. 371, 7067-7092",
+   "usedFor": "finite extendibility background",
+   "readWhat": "relevant sections (arXiv:1501.06188)",
+   "date": "2026-11-24",
+   "evidenceLocator": "https://doi.org/10.1090/tran/7701"
+  }
+ ],
+ "limitationTriage": [
+  {
+   "limitation": "Counterexamples are tiny effects",
+   "closingQuestion": "How large a violation of 3 gamma >= 2 rho can a PQD Archimedean copula produce?",
+   "triedOrSearched": "assessed by the panel and lead; needs a global optimisation over generators",
+   "estimatedCost": "new research",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Section 8, Model exclusion",
+   "whyNotClosedNow": "beyond publication scope; effect sizes stated"
+  },
+  {
+   "limitation": "Exchangeability range covers only -n/2 <= s <= 1",
+   "closingQuestion": "Can the range be extended to s < -n/2 or s > 1?",
+   "triedOrSearched": "yes, partly: s in [-n/2, 0) added in revision; for s < -n/2 a valid bound (Remark 6.4); grid LP probe suggests the singleton law is beaten there",
+   "estimatedCost": "new analysis",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Section 8, open problem (i)",
+   "whyNotClosedNow": "extremal laws change regime"
+  },
+  {
+   "limitation": "Full generalised Gini compatibility sets",
+   "closingQuestion": "Do the Theorem 7.1 inequalities with positive semidefiniteness characterise the set?",
+   "triedOrSearched": "a natural conjecture was examined by the lead and not pursued",
+   "estimatedCost": "unknown",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "Section 8, open problem (ii)",
+   "whyNotClosedNow": "open problem"
+  },
+  {
+   "limitation": "Original counterexample constants were inexplicit (tiny perturbation bound)",
+   "closingQuestion": "Can explicit parameter ranges be proved cheaply?",
+   "triedOrSearched": "yes: direct proofs for 0<|eps|<=1e-3 and 1e-8, checked exactly in verify.py",
+   "estimatedCost": "hours",
+   "cheap": true,
+   "decision": "CLOSED",
+   "reasonOpen": "",
+   "whyNotClosedNow": ""
+  },
+  {
+   "limitation": "Remark 6.4 bound printed with a wrong factor",
+   "closingQuestion": "Is the corrected bound valid and checked?",
+   "triedOrSearched": "corrected; verify.py checks -305/72 at n = 3, s = -3 and that it lies below the singleton value",
+   "estimatedCost": "hours",
+   "cheap": true,
+   "decision": "CLOSED",
+   "reasonOpen": "",
+   "whyNotClosedNow": ""
+  },
+  {
+   "limitation": "Novelty rests on searches of limited scope",
+   "closingQuestion": "Would further indexes change attribution?",
+   "triedOrSearched": "citation lists of FT and KH, arXiv and web; Semantic Scholar relevance search rate-limited; cited sources read",
+   "estimatedCost": "subscription indexes",
+   "cheap": false,
+   "decision": "OPEN",
+   "reasonOpen": "a 2026 paper not yet indexed could overlap",
+   "whyNotClosedNow": "recorded here; the paper positions its results against the sources read"
+  }
+ ],
+ "extensionScout": {
+  "by": "the internal review panel and the lead",
+  "date": "2026-11-24",
+  "proposals": [
+   "extend the exchangeability theorem to negative slopes",
+   "finite-family statement for the comparison duality",
+   "slopes s < -n/2 and s > 1",
+   "full three-dimensional Gini compatibility set"
+  ],
+  "actions": [
+   "done: -n/2 <= s < 0 (Theorem 6.1)",
+   "done: Corollary 4.2",
+   "partly done: valid bound for s < -n/2 (Remark 6.4); s > 1 open",
+   "not done: examined and recorded as open"
+  ]
+ }
+}

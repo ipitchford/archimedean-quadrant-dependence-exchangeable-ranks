@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: MIT
+name: Replay
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+jobs:
+  replay:
+    name: Manifest; both scripts under python -O; comparison under the declared policy; negative control
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check MANIFEST.sha256
+        run: sha256sum -c MANIFEST.sha256
+      - name: Install pinned packages (check_grid.py only)
+        run: python3 -m pip install -r requirements.txt
+      - name: Run both scripts in a fresh copy
+        run: |
+          D="$RUNNER_TEMP/pkg"; mkdir -p "$D"; cp verify.py check_grid.py "$D/"; cd "$D"
+          python3 -I -c 'import sys, numpy, scipy; print(sys.version, numpy.__version__, scipy.__version__)'
+          set -e
+          python3 -I -B -O verify.py > verify.txt
+          python3 -I -B -O check_grid.py > check_grid.txt
+      - name: Negative control (a wrong constant must fail under python -O)
+        run: |
+          N="$RUNNER_TEMP/neg1"; mkdir -p "$N"; cp verify.py "$N/"; cd "$N"
+          sed -i 's/check(bound(3, Q(1)) == -Q(23, 54)/check(bound(3, Q(1)) == -Q(4, 9)/' verify.py
+          grep -q 'check(bound(3, Q(1)) == -Q(4, 9)' verify.py
+          if python3 -I -B -O verify.py > out.txt 2>&1; then echo "wrong constant not detected"; exit 1; fi
+          grep -q "FAILED: d_3(1) = -23/54" out.txt
+          echo "negative control detected"
+      - name: Compare with the recorded outputs
+        run: python3 -I .github/ci/compare_outputs.py "$RUNNER_TEMP/pkg" .
+      - name: Working tree unchanged
+        run: test -z "$(git status --porcelain)"

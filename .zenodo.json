@@ -1,0 +1,79 @@
+{
+ "title": "Quadrant dependence, reflected copula measures and exchangeable ranks",
+ "upload_type": "publication",
+ "publication_type": "preprint",
+ "description": "<p><strong>Unrefereed research candidate.</strong> A copula describes how two quantities move together (losses on two loans, rainfall at two sites) through the joint behaviour of their ranks. Positive quadrant dependence (PQD) says that jointly low ranks are at least as likely as under independence, at every threshold. The positive measure inducing (PMI) property of Fuchs and Tschimpke compares, rectangle by rectangle, the probability on the main-diagonal side of the square with the probability on the opposite side. PMI forces the population inequality 3&gamma; &ge; 2&rho; between Gini's gamma and Spearman's rho, and Fuchs and Tschimpke conjectured that for Archimedean copulas PMI is equivalent to PQD (and NMI to NQD). Graham (2026) refuted PQD &rArr; PMI and left the other three implications open.</p><p><strong>Results.</strong> (1) All four implications fail arbitrarily close to independence, with real-analytic Archimedean generators, positive densities and explicit parameters (0 &lt; |&epsilon;| &le; 10<sup>&minus;3</sup> and 0 &lt; |&epsilon;| &le; 10<sup>&minus;8</sup>); the examples extend to exchangeable Archimedean copulas in any finite dimension, and in two of them quadrant dependence coexists with the opposite sign of 3&gamma; &minus; 2&rho;. (2) Ordered comparisons of invariant concordance measures detect exactly the symmetrised reflected measure; no finite collection of comparisons characterises PMI. (3) Shared-frailty models with two frailty values are always PMI; three values (rates 1, 2 and 200) can fail PMI, even with a density that is totally positive of every order. (4) For a pair of ranks that extends to n exchangeable ranks, the exact range of 3&gamma; &minus; 2s&rho; for every slope &minus;n/2 &le; s &le; 1: the lower endpoint is &minus;(3 &minus; 2s)/(n &minus; 1) for even n, with an explicit parity correction for odd n; for three ranks 3&gamma; &minus; 2&rho; &ge; &minus;23/54 and &gamma; &ge; &minus;4/9. (5) The same construction gives the exact equicorrelation slice of every generalised Gini compatibility set of Koike and Hofert, with integer quadratic inequalities for general matrices.</p><p><strong>Idea of the proofs.</strong> Nudge the independence copula by a small polynomial and track two signs, one for the cumulative comparison and one for the local reflected comparison; they can be chosen independently. For exchangeable ranks, write each rank as a sign and a size (Ansari, Rockel and Steinma&szlig;l); with an odd number of units the signs cannot all cancel, and that leftover sign costs a fixed amount of correlation.</p><p><strong>Limits.</strong> All statements are about populations. The counterexamples are tiny effects (3&gamma; &minus; 2&rho; of order 10<sup>&minus;10</sup> and 10<sup>&minus;5</sup> at the explicit parameters) and say nothing about the power of tests in realistic samples. The full set of attainable rank correlations for exchangeable ranks and the full generalised Gini compatibility sets remain open.</p><p><strong>Contents.</strong> The paper (LaTeX source and PDF), verify.py (standard library, exact rational arithmetic; every exact constant of the paper) and check_grid.py (NumPy/SciPy; finite-grid linear programs agreeing with the exchangeability theorem within a declared 1e-9 tolerance), their recorded outputs, the bibliography, a machine-readable index, a research-gate record, a review summary, a replay receipt and SHA-256 sums. Both scripts stop with a FAILED message and a nonzero exit on any failed check, also under python -O.</p><p><strong>Assurance.</strong> Written proofs with exact computational checks. Internal AI-assisted review only: a combined five-perspective Claude review panel, one revision round with an extension, a verification re-review with a proof audit of new and rewritten proofs, and clean replays with a negative control. No Astra/Codex review took place. This is not peer review, independent reproduction or formal verification. Creator: Anonymous. Text CC0-1.0; code MIT.</p>",
+ "creators": [
+  {
+   "name": "Anonymous"
+  }
+ ],
+ "access_right": "open",
+ "license": "cc-zero",
+ "version": "0.1.0-candidate",
+ "publication_date": "2026-11-26",
+ "keywords": [
+  "copula",
+  "Archimedean copula",
+  "positive quadrant dependence",
+  "positive measure inducing",
+  "Spearman's rho",
+  "Gini's gamma",
+  "concordance measures",
+  "exchangeability",
+  "frailty models"
+ ],
+ "notes": "Code (*.py and the CI workflow) is MIT; prose, manuscript, recorded outputs and records are CC0-1.0.",
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/ipitchford/archimedean-quadrant-dependence-exchangeable-ranks/tree/v0.1.0-candidate",
+   "relation": "isSupplementTo",
+   "scheme": "url"
+  },
+  {
+   "identifier": "https://evidencepress.org/releases/archimedean-quadrant-dependence-exchangeable-ranks/",
+   "relation": "isDocumentedBy",
+   "scheme": "url"
+  },
+  {
+   "identifier": "10.1016/j.jmva.2023.105259",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1002/cjs.11748",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1214/07-aos556",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/j.jmva.2023.105266",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1090/tran/7701",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.1016/j.jmva.2004.04.003",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "10.5281/zenodo.23862336",
+   "relation": "references",
+   "scheme": "doi"
+  },
+  {
+   "identifier": "arXiv:2609.19890",
+   "relation": "references",
+   "scheme": "arxiv"
+  }
+ ]
+}

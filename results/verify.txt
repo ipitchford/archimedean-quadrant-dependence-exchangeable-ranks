@@ -1,0 +1,25 @@
+ok  24 V_2 = 2/15
+ok  Family B rank slope 24(V_2 - 2 V_100) > 1/75
+    slope = 0.018635769295859687
+ok  remainder constant 1604
+ok  48*1604*1e-8 < 1/75
+ok  1e-8 < 197^-2 (global quadrant sign)
+ok  Family B density numerator positive at 1e-8 (d=2)
+ok  Family A folded margin > 4/5 at |eps| <= 1e-3
+ok  D_2 <= 1.002
+ok  D_3 >= 0.992
+ok  Family A density numerator positive at 1e-3 (d=2)
+ok  rates (1,2,200): folded density at (2/5,3/10) in (-0.00653,-0.00652)
+ok  limit root for v = 3/10 exceeds 1/2
+ok  closed forms agree with the integral formula, n = 2..51, eight slopes
+ok  the two odd branches agree in value and slope at s = n/(n+1), n = 3..51
+ok  d_3(1) = -23/54
+ok  d_3(0) = -4/3, so min Gini for n=3 is -4/9
+ok  d_5(1) = -59/250
+ok  d_3(3/4) = -11/18
+ok  corollary formulas for s = 1 and s = 0, odd n = 3..101
+ok  direct integration of the copula kernel matches d_n(s) in 56 cases (n = 2..9)
+ok  for s < -n/2 the valid lower bound lies strictly below the singleton value (4 cases)
+ok  remark bound at n=3, s=-3 equals -305/72
+ok  J_k = 1/k for ordinary Gini's gamma, odd k < 40
+All exact checks passed.

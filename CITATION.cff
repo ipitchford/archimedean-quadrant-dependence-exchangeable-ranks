@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using these metadata."
+type: software
+title: "Quadrant dependence, reflected copula measures and exchangeable ranks"
+abstract: "Unrefereed research candidate. Fuchs and Tschimpke conjectured that for Archimedean copulas the positive measure inducing (PMI) property is equivalent to positive quadrant dependence (PQD), and NMI to NQD. All four implications fail arbitrarily close to independence, with real-analytic Archimedean generators, positive densities and explicit parameters; in two examples quadrant dependence coexists with the opposite sign of 3 gamma - 2 rho. Ordered comparisons of invariant concordance measures detect exactly the symmetrised reflected measure, and no finite collection of them characterises PMI. Shared-frailty models with two frailty values are always PMI; three can fail it. For a pair of ranks that extends to n exchangeable ranks the exact range of 3 gamma - 2s rho is found for -n/2 <= s <= 1; for three ranks 3 gamma - 2 rho >= -23/54 and gamma >= -4/9. The same construction gives the exact equicorrelation slice of every generalised Gini compatibility set of Koike and Hofert."
+authors:
+  - name: "Anonymous"
+version: "0.1.0-candidate"
+date-released: "2026-11-26"
+doi: "10.5281/zenodo.24547093"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24547093"
+    description: "This version"
+  - type: doi
+    value: "10.5281/zenodo.24547092"
+    description: "All versions (concept DOI)"
+repository-code: "https://github.com/ipitchford/archimedean-quadrant-dependence-exchangeable-ranks"
+url: "https://evidencepress.org/releases/archimedean-quadrant-dependence-exchangeable-ranks/"
+license: CC0-1.0
+keywords:
+  - copula
+  - Archimedean copula
+  - positive quadrant dependence
+  - concordance measures
+  - Gini's gamma
+  - exchangeability
+preferred-citation:
+  type: article
+  title: "Quadrant dependence, reflected copula measures and exchangeable ranks"
+  authors:
+    - name: "Anonymous"
+  year: 2026
+  doi: "10.5281/zenodo.24547093"
+  publisher:
+    name: "Zenodo"
+  notes: "Version 0.1.0-candidate; unrefereed"
